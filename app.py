@@ -17,7 +17,7 @@ app.layout = html.Div([
     html.H2('Your favorite color'),
     dcc.Dropdown(
         id='dropdown',
-        options=[{'label': i, 'value': i} for i in ['round-house kick to the face', 'punch', 'body-slam']],
+        options=[{'label': i, 'value': i} for i in ['yellow', 'red', 'green']],
         value='punch'
     ),
     html.Div(id='display-value')
