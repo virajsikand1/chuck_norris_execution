@@ -20,6 +20,11 @@ app.layout = html.Div([
         options=[{'label': i, 'value': i} for i in ['yellow', 'red', 'green', 'blue']],
         value='yellow'
     ),
+    dcc.Dropdown(
+        id='dropdown2',
+        options=[{'label': i, 'value': i} for i in ['yellow', 'red', 'green', 'blue']],
+        value='yellow'
+    ),
     html.Div(id='display-value')
 ])
 
@@ -30,6 +35,10 @@ app.layout = html.Div([
 def display_value(value):
     return 'Your favorite color is "{}"'.format(value)
 
+@app.callback(dash.dependencies.Output('display-value', 'children'),
+              [dash.dependencies.Input('dropdown2', 'value')])
+def display_value(value):
+    return 'Your favorite color is "{}"'.format(value)
 
 ######### Run the app #########
 if __name__ == '__main__':
