@@ -14,7 +14,7 @@ app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"
 
 ####### Layout of the app ########
 app.layout = html.Div([
-    html.H2('Chuck Norris execution method'),
+    html.H2('Your favorite color'),
     dcc.Dropdown(
         id='dropdown',
         options=[{'label': i, 'value': i} for i in ['round-house kick to the face', 'punch', 'body-slam']],
