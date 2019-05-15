@@ -25,7 +25,8 @@ app.layout = html.Div([
         options=[{'label': i, 'value': i} for i in ['yellow', 'red', 'green', 'blue']],
         value='yellow'
     ),
-    html.Div(id='display-value')
+    html.Div(id='display-value'),
+    html.Div(id='display-value2')
 ])
 
 
@@ -35,7 +36,7 @@ app.layout = html.Div([
 def display_value(value):
     return 'Your favorite color is "{}"'.format(value)
 
-@app.callback(dash.dependencies.Output('display-value', 'children'),
+@app.callback(dash.dependencies.Output('display-value2', 'children'),
               [dash.dependencies.Input('dropdown2', 'value')])
 def display_value(value):
     return 'Your favorite color is "{}"'.format(value)
